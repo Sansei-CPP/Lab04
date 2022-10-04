@@ -2,7 +2,7 @@
 ROBT 403. Lab04
 
 Packages for Laboratory work number four. 
-ROS Melodic.
+Completed on ROS Melodic by Sanzhar Kabitkanov,Kamila Zhumakhanova, Ilyas Issa, Zholaman Kuangaliyev.
 
 ## Dependencies 
     git clone https://github.com/arebgun/dynamixel_motor
