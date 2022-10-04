@@ -1,0 +1,22 @@
+<launch>
+ <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find snake_config)/config/moveit_robot_control.yaml" command="load"  />
+  <rosparam file="$(find snake_config)/config/controllers.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" 
+	output="screen" args="joint_state_controller snake_arm_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" 
+
+	respawn="false" output="screen"> 
+
+  <!-- <remap from="/joint_states" to="/robot/joint_states"/>  -->
+
+
+  </node> 
+
+  <!-- <node name="moveit_motor_state" pkg="move" type="moveit_motor_state"/> -->
+ 
+</launch>
